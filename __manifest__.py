@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "C:\Users\USER\Desktop\Modules\ProductFields",
+    'name': "ProductFields",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        This module adds more fields to the product display view""",
 
     'description': """
         Long description of module's purpose
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Tirop",
+    'website': "http://www.ropesolutions.co.ke",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
@@ -20,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'stock'],
 
     # always loaded
     'data': [
