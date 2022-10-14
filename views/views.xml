@@ -2,12 +2,14 @@
 
 <odoo>
   <data>
-    <record id="product_product_template_only_form_view" model="ir.ui.form">
+    <!-- inherited product form view and added fields -->
+    <record id="product_template_form_view_inherit" model="ir.ui.view">
       <field name="name">product.template.inherited</field>
       <field name="model">product.template</field>
       <field name="inherit_id" ref="product.product_template_only_form_view"/>
       <field name="arch" type="xml">
         <field name="barcode" position="after">
+          <separator/>
           <field name="ppartno"/>
         </field>
         <field name="ppartno" position="after">
@@ -15,5 +17,23 @@
         </field>
       </field>
     </record>
+
+    <!-- Product kanban view inherited and added new fields -->
+    <record id="product_template_kanban_inherit" model="ir.ui.view">
+      <field name="name">product.template.kanban.inherited</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_kanban_view"/>
+      <field name="arch" type="xml">
+            <ul>
+              <xpath expr="//div[hasclass('oe_kanban_details')]" position="after">
+                <li>OE Number: <field name="ppartno"/></li>
+              </xpath>
+               <xpath expr="//div[hasclass('oe_kanban_details')]" position="after">
+                <li>Vendor Number: <field name="mpartno"/></li>
+              </xpath>
+            </ul>
+      </field>  
+    </record>
+        
   </data>
 </odoo>
