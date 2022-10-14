@@ -34,6 +34,21 @@
             </ul>
       </field>  
     </record>
+
+    <!-- inherited product search and extended search for new fields -->
+    <record id="product_search_inherit" model="ir.ui.view">
+      <field name="name">product.search.inherit</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+        <!-- dummy, will be modified by groups -->
+          <xpath expr="//search" position="inside">
+            <field name="ppartno" string="OE Number"/>
+            <field name="mpartno" string="Vendor No"/>
+            <filter string="Brand" domain="[]" context="{'group_by':'default_code'}"/>
+          </xpath>  
+        </field>
+    </record>
         
   </data>
 </odoo>
