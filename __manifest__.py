@@ -10,7 +10,7 @@
     """,
 
     'author': "Tirop",
-    'website': "http://www.ropesolutions.co.ke",
+    'website': "http://www.ropetech.co.ke",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
